@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're All Set — Samkor Systems</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rausch:     #D93657;
+      --near-black: #222222;
+      --secondary:  #6a6a6a;
+      --surface:    #f2f2f2;
+      --white:      #ffffff;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--near-black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Nav */
+    nav {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo { display: inline-flex; flex-direction: column; align-items: stretch; gap: 4px; }
+    .nav-logo-samkor { font-family: 'Raleway', sans-serif; font-size: 26px; font-weight: 700; color: var(--rausch); letter-spacing: -0.3px; line-height: 1; }
+    .nav-logo-systems { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; color: var(--rausch); text-transform: uppercase; display: flex; justify-content: space-between; width: 100%; }
+
+    /* Content */
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #f0fdf4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 32px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      color: var(--near-black);
+    }
+    .subtitle {
+      font-size: 16px;
+      color: var(--secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .plan-badge {
+      display: inline-block;
+      background: #fff0f3;
+      color: var(--rausch);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 36px;
+    }
+    .next-steps {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .next-steps h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+    .step-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .step-row:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--rausch);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 14px; line-height: 1.5; color: var(--near-black); }
+    .step-text strong { font-weight: 600; }
+
+    .btn-home {
+      display: inline-block;
+      background: var(--near-black);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-home:hover { background: var(--rausch); }
+
+    /* Footer */
+    footer {
+      padding: 20px 32px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      text-align: center;
+      font-size: 12px;
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-samkor">Samkor</span>
+    <span class="nav-logo-systems"><span>S</span><span>Y</span><span>S</span><span>T</span><span>E</span><span>M</span><span>S</span></span>
+  </a>
+</nav>
+
+<div class="page">
+  <div class="card">
+    <div class="icon">✓</div>
+    <h1>Payment received!</h1>
+
+    <div id="planBadge" class="plan-badge">Your plan is confirmed</div>
+
+    <p class="subtitle">
+      Your payment went through and we've got everything we need to get started.
+      Check your inbox — you'll hear from us within <strong>24 hours</strong> with a link to your free preview.
+    </p>
+
+    <div class="next-steps">
+      <h3>What happens next</h3>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>We build your preview</strong> — a real, live website for your business. Usually ready within 24 hours.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>You approve it</strong> — we'll send you a link to review. Request any changes and we'll get them done.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>We go live</strong> — once you're happy, we point your domain and your site is live, usually within 48 hours.</div>
+      </div>
+    </div>
+
+    <a href="/" class="btn-home">Back to home</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Samkor Systems · <a href="mailto:hello@samkorsystems.com" style="color:var(--rausch);">hello@samkorsystems.com</a>
+</footer>
+
+<script>
+  // Show the plan they chose (passed as URL param by Stripe success_url)
+  const params = new URLSearchParams(window.location.search);
+  const plan   = params.get('plan');
+  const labels = {
+    monthly:  'Monthly Plan — $149/month after today',
+    annual:   'Annual Plan — $1,299/year',
+    one_time: 'One-Time Build — $599',
+  };
+  const badge = document.getElementById('planBadge');
+  if (plan && labels[plan]) badge.textContent = labels[plan];
+</script>
+
+</body>
+</html>
