@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Website Audit — Samkor Systems</title>
+  <meta name="description" content="Get a free professional audit of your website. We check speed, SEO, accessibility, and mobile-friendliness — then show you exactly what's holding you back.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── SAMKOR DESIGN SYSTEM ──────────────────────────────────────── */
+    :root {
+      --rausch:       #D93657;
+      --rausch-dark:  #b82d49;
+      --near-black:   #222222;
+      --focused:      #3f3f3f;
+      --secondary:    #6a6a6a;
+      --border:       #c1c1c1;
+      --border-light: rgba(0,0,0,0.08);
+      --surface:      #f2f2f2;
+      --surface-warm: #fafafa;
+      --white:        #ffffff;
+      --shadow-card:  rgba(0,0,0,0.02) 0px 0px 0px 1px,
+                      rgba(0,0,0,0.04) 0px 2px 6px,
+                      rgba(0,0,0,0.10) 0px 4px 8px;
+      --shadow-hover: rgba(0,0,0,0.08) 0px 4px 12px;
+      --shadow-lg:    rgba(0,0,0,0.04) 0px 0px 0px 1px,
+                      rgba(0,0,0,0.08) 0px 8px 24px,
+                      rgba(0,0,0,0.12) 0px 16px 48px;
+      --r-xs:     4px;
+      --r-sm:     8px;
+      --r-badge:  14px;
+      --r-card:   20px;
+      --r-large:  32px;
+      --r-circle: 50%;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+      background: var(--white);
+      color: var(--near-black);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAV ─────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .nav-logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-decoration: none;
+      line-height: 1;
+      gap: 1px;
+    }
+    .nav-logo-samkor {
+      font-family: 'Raleway', 'Plus Jakarta Sans', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--rausch);
+      letter-spacing: -0.3px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .nav-logo-systems {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--rausch);
+      text-transform: uppercase;
+      line-height: 1;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--near-black);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--rausch); }
+    .nav-cta {
+      background: var(--near-black);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--rausch); transform: translateY(-1px); }
+
+    /* ─── PAGE HERO ───────────────────────────────────────────────── */
+    .page-hero {
+      background: var(--surface-warm);
+      border-bottom: 1px solid var(--border-light);
+      padding: 56px 32px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff0f3;
+      color: var(--rausch);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--r-badge);
+      margin-bottom: 20px;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rausch);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    .page-hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.44px;
+      color: var(--near-black);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--rausch);
+    }
+    .page-hero-sub {
+      font-size: 17px;
+      color: var(--secondary);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─── MAIN CONTENT ────────────────────────────────────────────── */
+    .audit-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ─── FORM CARD ───────────────────────────────────────────────── */
+    .audit-card {
+      background: var(--white);
+      border-radius: var(--r-large);
+      box-shadow: var(--shadow-lg);
+      padding: 40px;
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--near-black);
+      margin-bottom: 8px;
+    }
+    .form-label .opt {
+      font-weight: 400;
+      color: var(--secondary);
+    }
+    .form-input {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--near-black);
+      background: var(--white);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+    .form-input::placeholder { color: #aaa; }
+    .form-input:focus {
+      border-color: var(--rausch);
+      box-shadow: 0 0 0 3px rgba(217,54,87,0.12);
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: var(--rausch);
+      color: var(--white);
+      border: none;
+      padding: 16px 28px;
+      border-radius: var(--r-sm);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .btn-primary:hover {
+      background: var(--rausch-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(217,54,87,0.35);
+    }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-trust {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .form-trust span {
+      font-size: 12px;
+      color: var(--secondary);
+    }
+
+    /* ─── LOADING STATE ───────────────────────────────────────────── */
+    .loading-state { text-align: center; padding: 16px 0; }
+    .loading-spinner {
+      display: inline-block;
+      font-size: 40px;
+      animation: spin 1.5s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .loading-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 6px;
+    }
+    .loading-sub {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 24px;
+    }
+    .loading-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .loading-check {
+      font-size: 13px;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .loading-check.done { color: #16a34a; }
+
+    /* ─── ERROR ───────────────────────────────────────────────────── */
+    .error-msg {
+      background: #fff5f5;
+      border: 1.5px solid #fecaca;
+      color: #c0392b;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: var(--r-sm);
+      margin-bottom: 16px;
+    }
+
+    /* ─── RESULTS ─────────────────────────────────────────────────── */
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .results-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--near-black);
+    }
+    .btn-restart {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+    .btn-restart:hover { color: var(--rausch); }
+
+    /* Overall score */
+    .score-hero {
+      border-radius: var(--r-card);
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+      border: 1.5px solid;
+    }
+    .score-hero.grade-a { background: #f0fdf4; border-color: #bbf7d0; }
+    .score-hero.grade-b { background: #f0fdf4; border-color: #bbf7d0; }
+    .score-hero.grade-c { background: #fefce8; border-color: #fde68a; }
+    .score-hero.grade-d { background: #fff7ed; border-color: #fed7aa; }
+    .score-hero.grade-f { background: #fff5f5; border-color: #fecaca; }
+    .score-letter {
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+    .grade-a .score-letter, .grade-b .score-letter { color: #16a34a; }
+    .grade-c .score-letter { color: #ca8a04; }
+    .grade-d .score-letter { color: #ea580c; }
+    .grade-f .score-letter { color: #dc2626; }
+    .score-number {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-top: 4px;
+    }
+    .score-number span { font-size: 15px; font-weight: 400; color: var(--secondary); }
+    .score-label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .grade-a .score-label, .grade-b .score-label { color: #16a34a; }
+    .grade-c .score-label { color: #ca8a04; }
+    .grade-d .score-label { color: #ea580c; }
+    .grade-f .score-label { color: #dc2626; }
+    .score-hostname {
+      font-size: 12px;
+      color: var(--secondary);
+      margin-top: 6px;
+    }
+
+    /* Grade breakdown */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .grade-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .grade-item { text-align: center; }
+    .grade-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+    }
+    .grade-circle-letter {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .grade-circle-score {
+      font-size: 10px;
+      color: var(--secondary);
+      margin-top: 1px;
+    }
+    .gc-a, .gc-b { border-color: #16a34a; }
+    .gc-a .grade-circle-letter, .gc-b .grade-circle-letter { color: #16a34a; }
+    .gc-c { border-color: #ca8a04; }
+    .gc-c .grade-circle-letter { color: #ca8a04; }
+    .gc-d { border-color: #ea580c; }
+    .gc-d .grade-circle-letter { color: #ea580c; }
+    .gc-f { border-color: #dc2626; }
+    .gc-f .grade-circle-letter { color: #dc2626; }
+    .grade-item-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--near-black);
+    }
+    .grade-item-label {
+      font-size: 11px;
+      color: var(--secondary);
+      margin-top: 2px;
+    }
+
+    /* Speed metrics */
+    .metrics-card {
+      background: var(--surface-warm);
+      border-radius: var(--r-card);
+      border: 1px solid var(--border-light);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .metrics-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 14px;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+    .metric-val {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--near-black);
+    }
+    .metric-val.bad { color: #dc2626; }
+    .metric-val.ok  { color: #ca8a04; }
+    .metric-val.good { color: #16a34a; }
+    .metric-key {
+      font-size: 11px;
+      color: var(--secondary);
+      margin-top: 2px;
+    }
+
+    /* Issues */
+    .issues-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .issue-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff5f5;
+      border: 1px solid #fecaca;
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+    }
+    .issue-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #dc2626;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .issue-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--near-black);
+    }
+    .issue-desc {
+      font-size: 12px;
+      color: var(--secondary);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    /* ─── CTA CARD ────────────────────────────────────────────────── */
+    .cta-card {
+      background: var(--rausch);
+      border-radius: var(--r-large);
+      padding: 36px 40px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .cta-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .cta-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 24px;
+      line-height: 1.6;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--white);
+      color: var(--rausch);
+      padding: 14px 32px;
+      border-radius: var(--r-sm);
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .btn-cta:hover {
+      background: #fff0f3;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .cta-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 12px;
+    }
+
+    /* ─── CONTACT FORM ────────────────────────────────────────────── */
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--r-large);
+      box-shadow: var(--shadow-lg);
+      border: 1.5px solid #fecdd3;
+      padding: 36px 40px;
+      margin-top: 24px;
+    }
+    .contact-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 6px;
+    }
+    .contact-card > p {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 24px;
+      line-height: 1.55;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    /* ─── SUCCESS ─────────────────────────────────────────────────── */
+    .success-card {
+      background: var(--white);
+      border-radius: var(--r-large);
+      box-shadow: var(--shadow-lg);
+      border: 1.5px solid #bbf7d0;
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .success-icon { font-size: 48px; margin-bottom: 16px; }
+    .success-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 10px;
+    }
+    .success-card p {
+      font-size: 14px;
+      color: var(--secondary);
+      max-width: 360px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────────── */
+    footer {
+      background: #111;
+      padding: 48px 32px 32px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 24px;
+    }
+    .footer-brand h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      max-width: 240px;
+      line-height: 1.55;
+    }
+    .footer-links-group h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .footer-links-group ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-links-group a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.15s;
+    }
+    .footer-links-group a:hover { color: white; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-email { font-size: 12px; color: rgba(255,255,255,0.35); transition: color 0.15s; }
+    .footer-email:hover { color: var(--rausch); }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-inner { padding: 0 20px; }
+      .audit-card, .cta-card, .contact-card, .success-card { padding: 28px 24px; }
+      .grade-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-samkor">Samkor</span>
+      <span class="nav-logo-systems"><span>S</span><span>Y</span><span>S</span><span>T</span><span>E</span><span>M</span><span>S</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#examples">Examples</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <a href="/audit" class="nav-cta">Get Free Audit →</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Free — No signup required
+  </div>
+  <h1>Is Your Website<br><em>Hurting Your Business?</em></h1>
+  <p class="page-hero-sub">
+    Enter your URL and we'll run a professional audit — speed, SEO, mobile-friendliness,
+    and accessibility — in plain English. Takes about 60 seconds.
+  </p>
+</section>
+
+<!-- ═══ AUDIT TOOL ════════════════════════════════════════════════════════ -->
+<main class="audit-wrap">
+
+  <!-- Form -->
+  <div id="formSection">
+    <div class="audit-card">
+      <div id="errorMsg" class="error-msg" style="display:none;"></div>
+
+      <div id="formFields">
+        <div class="form-group">
+          <label class="form-label" for="urlInput">Your Website URL</label>
+          <input
+            id="urlInput"
+            class="form-input"
+            type="text"
+            placeholder="yourplumbingbusiness.com"
+            autocomplete="url"
+            autofocus
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="emailInput">
+            Email <span class="opt">(optional — get results emailed to you)</span>
+          </label>
+          <input
+            id="emailInput"
+            class="form-input"
+            type="email"
+            placeholder="you@yourbusiness.com"
+          />
+        </div>
+        <button id="auditBtn" class="btn-primary" onclick="runAudit()">
+          Run My Free Audit →
+        </button>
+        <div class="form-trust">
+          <span>✓ 100% Free</span>
+          <span>✓ No login needed</span>
+          <span>✓ Results in ~60 sec</span>
+        </div>
+      </div>
+
+      <div id="loadingState" class="loading-state" style="display:none;">
+        <div class="loading-spinner">🔍</div>
+        <p class="loading-title">Analyzing your site…</p>
+        <p class="loading-sub">Running Lighthouse checks. This takes about 30–60 seconds.</p>
+        <div class="loading-checks">
+          <div class="loading-check" id="chk1">⏳ Checking page speed</div>
+          <div class="loading-check" id="chk2">⏳ Auditing SEO signals</div>
+          <div class="loading-check" id="chk3">⏳ Testing mobile-friendliness</div>
+          <div class="loading-check" id="chk4">⏳ Scanning for issues</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How it works pills -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;" id="trustPills">
+      <div style="background:var(--surface-warm);border:1px solid var(--border-light);border-radius:var(--r-card);padding:20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">🏎️</div>
+        <div style="font-size:13px;font-weight:700;color:var(--near-black);margin-bottom:4px;">Performance</div>
+        <div style="font-size:12px;color:var(--secondary);">How fast your site loads on real mobile connections</div>
+      </div>
+      <div style="background:var(--surface-warm);border:1px solid var(--border-light);border-radius:var(--r-card);padding:20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+        <div style="font-size:13px;font-weight:700;color:var(--near-black);margin-bottom:4px;">SEO Score</div>
+        <div style="font-size:12px;color:var(--secondary);">How well Google can find and rank your pages</div>
+      </div>
+      <div style="background:var(--surface-warm);border:1px solid var(--border-light);border-radius:var(--r-card);padding:20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">📱</div>
+        <div style="font-size:13px;font-weight:700;color:var(--near-black);margin-bottom:4px;">Mobile-Ready</div>
+        <div style="font-size:12px;color:var(--secondary);">Whether your site works on phones (60%+ of visitors)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results (hidden until audit runs) -->
+  <div id="resultsSection" style="display:none;">
+    <div class="results-header">
+      <h2>Your Audit Results</h2>
+      <button class="btn-restart" onclick="resetAudit()">← Audit another site</button>
+    </div>
+
+    <div class="audit-card">
+      <!-- Overall score -->
+      <div id="scoreHero" class="score-hero"></div>
+
+      <!-- Breakdown -->
+      <p class="section-label" style="margin-top:24px;">Grade Breakdown</p>
+      <div class="grade-grid" id="gradeGrid"></div>
+
+      <!-- Speed metrics -->
+      <div id="metricsCard" class="metrics-card" style="display:none;">
+        <div class="metrics-title">⚡ Speed Metrics</div>
+        <div class="metrics-grid" id="metricsGrid"></div>
+      </div>
+
+      <!-- Issues -->
+      <div id="issuesSection" style="display:none;">
+        <p class="section-label">Top Issues Found</p>
+        <div class="issues-list" id="issuesList"></div>
+      </div>
+    </div>
+
+    <!-- CTA (shown first) -->
+    <div id="ctaCard" class="cta-card">
+      <h3>See what your site could look like.</h3>
+      <p id="ctaSubtext">We'll build a free preview of a redesigned site — no commitment, no credit card. Takes us about 24 hours.</p>
+      <button class="btn-cta" onclick="showContactForm()">Get My Free Preview →</button>
+      <p class="cta-note">Free. No strings attached.</p>
+    </div>
+
+    <!-- Contact form (shown after clicking CTA) -->
+    <div id="contactCard" class="contact-card" style="display:none;">
+      <h3>Almost there!</h3>
+      <p id="contactSubtext">Where should we send your free preview?</p>
+      <div id="contactError" class="error-msg" style="display:none;"></div>
+      <div class="form-row">
+        <div class="form-group" style="margin:0">
+          <label class="form-label" for="contactName">Your Name <span style="color:var(--rausch)">*</span></label>
+          <input id="contactName" class="form-input" type="text" placeholder="Joe Smith" />
+        </div>
+        <div class="form-group" style="margin:0">
+          <label class="form-label" for="contactPhone">Phone</label>
+          <input id="contactPhone" class="form-input" type="tel" placeholder="(555) 123-4567" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="contactEmail">Email <span style="color:var(--rausch)">*</span></label>
+        <input id="contactEmail" class="form-input" type="email" placeholder="joe@smithplumbing.com" />
+      </div>
+      <button id="contactBtn" class="btn-primary" onclick="submitContact()">
+        🚀 Get My Free Preview Site →
+      </button>
+      <p style="font-size:11px;color:var(--secondary);text-align:center;margin-top:12px;">
+        No spam. Unsubscribe any time. Your free preview will be ready within 24 hours.
+      </p>
+    </div>
+
+    <!-- Success (shown after contact submit) -->
+    <div id="successCard" class="success-card" style="display:none;">
+      <div class="success-icon">🎉</div>
+      <h3>You're all set!</h3>
+      <p id="successMsg">We'll be in touch within 24 hours with a free preview of what your new site could look like.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Samkor Systems</h3>
+        <p>Beautiful websites for local businesses. Built fast, priced fairly, backed by real people.</p>
+      </div>
+      <div class="footer-links-group">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#examples">Examples</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/audit">Free Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="mailto:hello@samkorsystems.com">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Samkor Systems. All rights reserved.</span>
+      <a href="mailto:hello@samkorsystems.com" class="footer-email">hello@samkorsystems.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Config ────────────────────────────────────────────────────────────────
+  // Point this at your LeadForge backend.
+  // Development: http://localhost:3001
+  // Production:  update to your deployed server URL (e.g. https://api.samkorsystems.com)
+  const API_BASE = 'http://localhost:3001';
+
+  // ── State ─────────────────────────────────────────────────────────────────
+  let currentAuditId = null;
+  let currentHostname = null;
+
+  // ── Audit ─────────────────────────────────────────────────────────────────
+  async function runAudit() {
+    const url   = document.getElementById('urlInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+
+    if (!url) { showError('errorMsg', 'Please enter your website URL.'); return; }
+
+    hideError('errorMsg');
+    showLoading();
+
+    // Animate loading checks
+    const checks = ['chk1','chk2','chk3','chk4'];
+    const delays = [4000, 12000, 22000, 34000];
+    delays.forEach((ms, i) => {
+      setTimeout(() => {
+        const el = document.getElementById(checks[i]);
+        if (el) { el.textContent = '✓ ' + el.textContent.slice(2); el.classList.add('done'); }
+      }, ms);
+    });
+
+    try {
+      const res = await fetch(`${API_BASE}/api/public/audit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, email: email || undefined }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Audit failed. Please try again.');
+      showResults(data);
+    } catch (e) {
+      showFormFields();
+      showError('errorMsg', e.message);
+    }
+  }
+
+  // Handle Enter key on inputs
+  document.addEventListener('DOMContentLoaded', () => {
+    ['urlInput','emailInput'].forEach(id => {
+      document.getElementById(id).addEventListener('keydown', e => {
+        if (e.key === 'Enter') runAudit();
+      });
+    });
+  });
+
+  // ── Display helpers ───────────────────────────────────────────────────────
+  function showLoading() {
+    document.getElementById('formFields').style.display  = 'none';
+    document.getElementById('trustPills').style.display  = 'none';
+    document.getElementById('loadingState').style.display = 'block';
+  }
+
+  function showFormFields() {
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('formFields').style.display   = 'block';
+    document.getElementById('trustPills').style.display   = 'grid';
+  }
+
+  function showError(id, msg) {
+    const el = document.getElementById(id);
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  function hideError(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  function gradeClass(grade) {
+    return { A:'gc-a', B:'gc-b', C:'gc-c', D:'gc-d', F:'gc-f' }[grade] || 'gc-f';
+  }
+
+  function showResults(report) {
+    currentAuditId  = report.auditId;
+    currentHostname = report.hostname;
+
+    document.getElementById('formSection').style.display    = 'none';
+    document.getElementById('resultsSection').style.display = 'block';
+
+    // Overall score hero
+    const gClass = `grade-${report.overallGrade.toLowerCase()}`;
+    document.getElementById('scoreHero').className = `score-hero ${gClass}`;
+    document.getElementById('scoreHero').innerHTML = `
+      <div class="score-letter">${report.overallGrade}</div>
+      <div class="score-number">${report.composite}<span>/100</span></div>
+      <div class="score-label">${report.overallLabel}</div>
+      <div class="score-hostname">Analyzed: ${report.hostname}</div>
+    `;
+
+    // Grade breakdown
+    const cats = [
+      { key: 'performance',   title: 'Performance' },
+      { key: 'seo',           title: 'SEO' },
+      { key: 'accessibility', title: 'Accessibility' },
+      { key: 'bestPractices', title: 'Best Practices' },
+    ];
+    document.getElementById('gradeGrid').innerHTML = cats.map(({ key, title }) => {
+      const s = report.scores[key];
+      return `
+        <div class="grade-item">
+          <div class="grade-circle ${gradeClass(s.grade)}">
+            <span class="grade-circle-letter">${s.grade}</span>
+            <span class="grade-circle-score">${s.score}</span>
+          </div>
+          <div class="grade-item-title">${title}</div>
+          <div class="grade-item-label">${s.label}</div>
+        </div>`;
+    }).join('');
+
+    // Speed metrics
+    const m = report.metrics;
+    if (m.fcpLabel) {
+      const rows = [];
+      if (m.lcp)  rows.push({ val: `${(m.lcp/1000).toFixed(1)}s`,  cls: m.lcp > 4000 ? 'bad' : m.lcp > 2500 ? 'ok' : 'good', key: 'Largest Content' });
+      if (m.tbt !== null) rows.push({ val: `${m.tbt}ms`, cls: m.tbt > 600 ? 'bad' : m.tbt > 200 ? 'ok' : 'good', key: 'Blocking Time' });
+      if (m.cls !== null) rows.push({ val: `${m.cls}`,   cls: m.cls > 0.25 ? 'bad' : m.cls > 0.1 ? 'ok' : 'good', key: 'Layout Shift' });
+      if (rows.length) {
+        document.getElementById('metricsGrid').innerHTML = rows.map(r =>
+          `<div><div class="metric-val ${r.cls}">${r.val}</div><div class="metric-key">${r.key}</div></div>`
+        ).join('');
+        document.getElementById('metricsCard').style.display = 'block';
+      }
+    }
+
+    // Issues
+    if (report.issues && report.issues.length) {
+      document.getElementById('issuesList').innerHTML = report.issues.map((issue, i) => `
+        <div class="issue-item">
+          <span class="issue-num">#${i+1}</span>
+          <div>
+            <div class="issue-title">${issue.title}</div>
+            ${issue.description ? `<div class="issue-desc">${issue.description}</div>` : ''}
+          </div>
+        </div>`).join('');
+      document.getElementById('issuesSection').style.display = 'block';
+    }
+
+    // CTA subtext
+    document.getElementById('ctaSubtext').textContent =
+      `We'll build a free preview of a redesigned ${report.hostname} — no commitment, no credit card. Takes us about 24 hours.`;
+  }
+
+  // ── Contact form ──────────────────────────────────────────────────────────
+  function showContactForm() {
+    document.getElementById('ctaCard').style.display = 'none';
+    document.getElementById('contactCard').style.display = 'block';
+    document.getElementById('contactSubtext').textContent =
+      `Where should we send your free preview of ${currentHostname}?`;
+  }
+
+  async function submitContact() {
+    const name  = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const phone = document.getElementById('contactPhone').value.trim();
+
+    if (!name || !email) { showError('contactError', 'Name and email are required.'); return; }
+
+    hideError('contactError');
+    const btn = document.getElementById('contactBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch(`${API_BASE}/api/public/audit/${currentAuditId}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone }),
+      });
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.error || 'Submission failed');
+      }
+      document.getElementById('contactCard').style.display = 'none';
+      document.getElementById('successCard').style.display = 'block';
+      document.getElementById('successMsg').textContent =
+        `We'll be in touch within 24 hours with a free preview of what your new ${currentHostname} could look like.`;
+    } catch (e) {
+      showError('contactError', e.message);
+      btn.disabled = false;
+      btn.textContent = '🚀 Get My Free Preview Site →';
+    }
+  }
+
+  // ── Reset ─────────────────────────────────────────────────────────────────
+  function resetAudit() {
+    currentAuditId  = null;
+    currentHostname = null;
+    document.getElementById('urlInput').value  = '';
+    document.getElementById('emailInput').value = '';
+    document.getElementById('resultsSection').style.display = 'none';
+    document.getElementById('formSection').style.display    = 'block';
+    document.getElementById('loadingState').style.display   = 'none';
+    document.getElementById('formFields').style.display     = 'block';
+    document.getElementById('trustPills').style.display     = 'grid';
+    document.getElementById('ctaCard').style.display        = 'block';
+    document.getElementById('contactCard').style.display    = 'none';
+    document.getElementById('successCard').style.display    = 'none';
+    document.getElementById('metricsCard').style.display    = 'none';
+    document.getElementById('issuesSection').style.display  = 'none';
+    ['chk1','chk2','chk3','chk4'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.classList.remove('done'); el.textContent = '⏳ ' + el.textContent.slice(2); }
+    });
+    hideError('errorMsg');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
