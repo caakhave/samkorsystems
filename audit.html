@@ -880,10 +880,10 @@
 
 <script>
   // ── Config ────────────────────────────────────────────────────────────────
-  // Point this at your LeadForge backend.
-  // Development: http://localhost:3001
-  // Production:  update to your deployed server URL (e.g. https://api.samkorsystems.com)
-  const API_BASE = 'https://leadforge-production-ff5f.up.railway.app';
+  const _devHosts = ['', 'localhost', '127.0.0.1'];
+  const API_BASE = _devHosts.includes(window.location.hostname)
+    ? 'http://localhost:3001'
+    : 'https://leadforge-production-ff5f.up.railway.app';
 
   // ── State ─────────────────────────────────────────────────────────────────
   let currentAuditId = null;

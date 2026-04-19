@@ -197,9 +197,15 @@
 </footer>
 
 <script>
-  // Show the plan they chose (passed as URL param by Stripe success_url)
-  const params = new URLSearchParams(window.location.search);
-  const plan   = params.get('plan');
+  const params    = new URLSearchParams(window.location.search);
+  const plan      = params.get('plan');
+  const sessionId = params.get('session_id');
+
+  // Guard: this page should only be reached via Stripe redirect
+  if (!sessionId) {
+    window.location.replace('/');
+  }
+
   const labels = {
     monthly:  'Monthly Plan — $149/month after today',
     annual:   'Annual Plan — $1,299/year',
