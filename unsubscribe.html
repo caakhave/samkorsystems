@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsubscribe — Samkor Systems</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rausch:       #D93657;
+      --rausch-dark:  #b82d49;
+      --near-black:   #222222;
+      --secondary:    #6a6a6a;
+      --border:       #c1c1c1;
+      --border-light: rgba(0,0,0,0.08);
+      --white:        #ffffff;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--near-black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 32px; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: inline-flex; flex-direction: column; align-items: stretch; line-height: 1; }
+    .nav-logo-samkor { font-family: 'Raleway', sans-serif; font-size: 26px; font-weight: 700; color: var(--rausch); letter-spacing: -0.3px; }
+    .nav-logo-systems { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; color: var(--rausch); text-transform: uppercase; display: flex; justify-content: space-between; width: 100%; }
+
+    /* ─── MAIN ─── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 24px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      box-shadow: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 16px;
+      padding: 48px 40px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+    }
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .card h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    label {
+      display: block;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--near-black);
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.15s;
+    }
+    input[type="email"]:focus { border-color: var(--rausch); }
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      background: var(--near-black);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-submit:hover { background: #3a3a3a; }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .error-msg {
+      font-size: 13px;
+      color: var(--rausch);
+      margin-bottom: 12px;
+      text-align: left;
+      display: none;
+    }
+
+    /* ─── SUCCESS STATE ─── */
+    .success-state { display: none; }
+    .success-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    .success-state h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .success-state p {
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .btn-home {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--near-black);
+      transition: border-color 0.15s;
+    }
+    .btn-home:hover { border-color: var(--near-black); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--near-black); padding: 28px 32px; }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); transition: color 0.15s; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .card { padding: 36px 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-samkor">Samkor</span>
+      <span class="nav-logo-systems"><span>S</span><span>Y</span><span>S</span><span>T</span><span>E</span><span>M</span><span>S</span></span>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <!-- Form state -->
+    <div id="formState">
+      <div class="card-icon">✉️</div>
+      <h1>Unsubscribe from emails</h1>
+      <p>Enter your email address below and we'll remove you from all outreach lists immediately. You'll stop receiving marketing emails from Samkor Systems.</p>
+      <div>
+        <label for="emailInput">Your email address</label>
+        <input type="email" id="emailInput" placeholder="you@yourbusiness.com" autocomplete="email">
+        <div id="errorMsg" class="error-msg"></div>
+        <button class="btn-submit" id="submitBtn" onclick="handleUnsubscribe()">Remove me from your list</button>
+      </div>
+      <p style="font-size:12px; color:var(--secondary); margin-top:16px; margin-bottom:0;">
+        Already a customer? This only removes you from marketing emails — billing and account communications are not affected.
+        Questions? Email <a href="mailto:hello@samkorsystems.com" style="color:var(--rausch);">hello@samkorsystems.com</a>.
+      </p>
+    </div>
+
+    <!-- Success state -->
+    <div id="successState" class="success-state">
+      <div class="success-icon">✓</div>
+      <h1>You've been removed.</h1>
+      <p>Your email address has been added to our opt-out list. You won't receive any further outreach emails from Samkor Systems.</p>
+      <a href="/" class="btn-home">Back to home</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Samkor Systems. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:hello@samkorsystems.com">hello@samkorsystems.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Pre-fill email from URL param (links in emails will include ?email=...)
+  const params = new URLSearchParams(window.location.search);
+  const preEmail = params.get('email');
+  if (preEmail) document.getElementById('emailInput').value = preEmail;
+
+  const _devHosts = ['', 'localhost', '127.0.0.1'];
+  const API_BASE = _devHosts.includes(window.location.hostname)
+    ? 'http://localhost:3001'
+    : 'https://leadforge-production-ff5f.up.railway.app';
+
+  async function handleUnsubscribe() {
+    const emailInput = document.getElementById('emailInput');
+    const submitBtn  = document.getElementById('submitBtn');
+    const errorMsg   = document.getElementById('errorMsg');
+    const email      = emailInput.value.trim();
+
+    errorMsg.style.display = 'none';
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorMsg.textContent = 'Please enter a valid email address.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Processing…';
+
+    try {
+      const res = await fetch(`${API_BASE}/api/public/unsubscribe`, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ email }),
+      });
+
+      if (!res.ok && res.status !== 409) {
+        throw new Error('Server error');
+      }
+
+      // 409 = already on list — still show success to the user
+      document.getElementById('formState').style.display    = 'none';
+      document.getElementById('successState').style.display = 'block';
+    } catch (err) {
+      submitBtn.disabled    = false;
+      submitBtn.textContent = 'Remove me from your list';
+      errorMsg.textContent  = 'Something went wrong. Please email hello@samkorsystems.com to be removed.';
+      errorMsg.style.display = 'block';
+    }
+  }
+
+  // Allow Enter key to submit
+  document.getElementById('emailInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleUnsubscribe();
+  });
+</script>
+
+</body>
+</html>

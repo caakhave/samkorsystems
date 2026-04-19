@@ -1,0 +1,6 @@
+# Clean URL rewrites — serves foo.html at /foo with no redirect
+/audit        /audit.html        200
+/terms        /terms.html        200
+/privacy      /privacy.html      200
+/unsubscribe  /unsubscribe.html  200
+/thank-you    /thank-you.html    200

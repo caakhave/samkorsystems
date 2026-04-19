@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Samkor Systems</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rausch:       #D93657;
+      --near-black:   #222222;
+      --secondary:    #6a6a6a;
+      --border-light: rgba(0,0,0,0.08);
+      --white:        #ffffff;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--near-black);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 32px; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: inline-flex; flex-direction: column; align-items: stretch; line-height: 1; }
+    .nav-logo-samkor { font-family: 'Raleway', sans-serif; font-size: 26px; font-weight: 700; color: var(--rausch); letter-spacing: -0.3px; }
+    .nav-logo-systems { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; color: var(--rausch); text-transform: uppercase; display: flex; justify-content: space-between; width: 100%; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .content { max-width: 480px; }
+    .four-oh-four {
+      font-size: 96px;
+      font-weight: 800;
+      color: var(--rausch);
+      letter-spacing: -4px;
+      line-height: 1;
+      margin-bottom: 24px;
+      opacity: 0.15;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    p {
+      font-size: 16px;
+      color: var(--secondary);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      padding: 13px 24px;
+      background: var(--rausch);
+      color: white;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: #b82d49; }
+    .btn-ghost {
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1.5px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--secondary);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--near-black); color: var(--near-black); }
+
+    footer { background: var(--near-black); padding: 28px 32px; }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); transition: color 0.15s; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .four-oh-four { font-size: 72px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-samkor">Samkor</span>
+      <span class="nav-logo-systems"><span>S</span><span>Y</span><span>S</span><span>T</span><span>E</span><span>M</span><span>S</span></span>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="content">
+    <div class="four-oh-four">404</div>
+    <h1>Nothing here.</h1>
+    <p>The page you're looking for doesn't exist or was moved. Head back to the homepage or run a free audit on your site.</p>
+    <div class="actions">
+      <a href="/" class="btn-primary">Back to home</a>
+      <a href="/audit" class="btn-ghost">Free site audit</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Samkor Systems. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:hello@samkorsystems.com">hello@samkorsystems.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

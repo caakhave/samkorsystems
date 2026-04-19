@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samkor Systems — Beautiful Websites for Local Businesses</title>
   <meta name="description" content="We build fast, beautiful websites for local businesses — and show you a free preview before you pay a thing. See what your new site looks like in 24 hours.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://samkorsystems.com/">
+  <meta property="og:title"       content="Samkor Systems — Beautiful Websites for Local Businesses">
+  <meta property="og:description" content="We build fast, beautiful websites for local businesses — and show you a free preview before you pay a thing. See what your new site looks like in 24 hours.">
+  <meta property="og:image"       content="https://samkorsystems.com/preview-example.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Samkor Systems — Beautiful Websites for Local Businesses">
+  <meta name="twitter:description" content="We build fast, beautiful websites for local businesses — and show you a free preview before you pay a thing.">
+  <meta name="twitter:image"       content="https://samkorsystems.com/preview-example.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
@@ -1507,6 +1520,27 @@
     }
     .checkout-submit:hover { background: var(--rausch-dark); transform: translateY(-1px); }
     .checkout-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .checkout-tos {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .checkout-tos input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--rausch);
+      cursor: pointer;
+    }
+    .checkout-tos label {
+      font-size: 12px;
+      color: var(--secondary);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .checkout-tos label a { color: var(--rausch); text-decoration: underline; }
     .checkout-error {
       background: #fef2f2;
       color: #dc2626;
@@ -2047,7 +2081,7 @@
             <li><span class="pf-x">✕</span> Ongoing support not included</li>
             <li><span class="pf-x">✕</span> Monthly updates not included</li>
           </ul>
-          <button onclick="openCheckoutModal('one_time')" class="pricing-secondary-btn">Inquire about the one-time build →</button>
+          <a href="mailto:hello@samkorsystems.com?subject=One-Time%20Build%20Inquiry&body=Hi%2C%20I%27m%20interested%20in%20the%20one-time%20build%20option.%20My%20business%20is%3A%0A%0A" class="pricing-secondary-btn">Email us to get started →</a>
           <div class="pricing-secondary-note">For businesses that prefer to manage their own hosting and maintenance.</div>
         </div>
 
@@ -2213,6 +2247,9 @@
         <h4>Company</h4>
         <ul>
           <li><a href="mailto:hello@samkorsystems.com">Contact Us</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/unsubscribe">Unsubscribe</a></li>
         </ul>
       </div>
     </div>
@@ -2272,6 +2309,10 @@
           <label for="signupWebsite">Current website <span style="font-weight:400; color:var(--secondary);">(if you have one)</span></label>
           <input type="text" id="signupWebsite" placeholder="yourbusiness.com" autocomplete="url">
         </div>
+        <div class="checkout-tos">
+          <input type="checkbox" id="signupTos">
+          <label for="signupTos">I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>. I understand Samkor Systems may contact me about my project.</label>
+        </div>
         <div id="checkoutError" class="checkout-error"></div>
         <button type="submit" id="checkoutSubmitBtn" class="checkout-submit">Get Started →</button>
         <div style="font-size:12px; color:var(--secondary); text-align:center; margin-top:6px;">No credit card required yet. We'll reach out within 24 hours.</div>
@@ -2306,14 +2347,13 @@
   const _devHosts = ['', 'localhost', '127.0.0.1'];
   const LEADFORGE_API = _devHosts.includes(window.location.hostname)
     ? 'http://localhost:3001'
-    : 'https://app.samkorsystems.com'; // UPDATE: set to your LeadForge server URL
+    : 'https://leadforge-production-ff5f.up.railway.app';
 
   let _checkoutPlan = 'monthly';
 
   const PLAN_LABELS = {
-    monthly:  'Monthly — $99 today, then $149/mo',
-    annual:   'Annual — $1,299/year (save ~$489)',
-    one_time: 'One-Time Build — $599',
+    monthly: 'Monthly — $99 today, then $149/mo',
+    annual:  'Annual — $1,299/year (save ~$489)',
   };
 
   function openCheckoutModal(flow) {
@@ -2329,14 +2369,8 @@
     document.getElementById('checkoutSubmitBtn').disabled = false;
     document.getElementById('checkoutSubmitBtn').textContent = 'Get Started →';
 
-    if (flow === 'one_time') {
-      // Skip billing choice — jump straight to contact form
-      document.getElementById('checkoutPlanBadge').textContent = PLAN_LABELS.one_time;
-      document.getElementById('checkoutStepContact').classList.add('active');
-    } else {
-      // Show billing choice (monthly vs annual)
-      document.getElementById('checkoutStep1').classList.add('active');
-    }
+    // Show billing choice (monthly vs annual)
+    document.getElementById('checkoutStep1').classList.add('active');
   }
 
   function closeCheckoutModal() {
@@ -2369,8 +2403,11 @@
     const phone   = document.getElementById('signupPhone').value.trim();
     const website = document.getElementById('signupWebsite').value.trim();
 
-    if (!name)  { showErr('Please enter your name.'); return; }
-    if (!email) { showErr('Please enter your email address.'); return; }
+    const tosChecked = document.getElementById('signupTos').checked;
+
+    if (!name)       { showErr('Please enter your name.'); return; }
+    if (!email)      { showErr('Please enter your email address.'); return; }
+    if (!tosChecked) { showErr('Please agree to the Terms of Service to continue.'); return; }
 
     btn.disabled    = true;
     btn.textContent = 'Continuing…';
