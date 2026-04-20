@@ -1,6 +1,2 @@
-# Clean URL rewrites — serves foo.html at /foo with no redirect
-/audit        /audit.html        200
-/terms        /terms.html        200
-/privacy      /privacy.html      200
-/unsubscribe  /unsubscribe.html  200
-/thank-you    /thank-you.html    200
+# Cloudflare Pages serves clean URLs natively (audit.html → /audit, etc.)
+# No explicit rewrites needed — adding them causes redirect loops.
